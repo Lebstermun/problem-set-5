@@ -28,7 +28,7 @@ function mario() {
 
   // WRITE YOUR EXERCISE 1 CODE HERE
 height=prompt("please enter an interger for the Height");
-while(height !==1|| height !== 2 || height !== 3 ||  4 || height !== 5 || height !== 6 || height !== 7 || height !== 8 || height !== 9 || height !== 10 || height !== 11 || height !== 12 || height !== 13 || height !== 14 || height !== 15 || height !== 16 || height !== 17 || height !== 18 || height !== 19 || height !== 20 || height !== 21 || height !== 22 || height !== 23){
+while (height > 23||height < 1 || height % 1 != 0) {
   height=prompt("please enter an interger for the Height");
 }
 var p=document.getElementById("mario-easy-output")
@@ -194,7 +194,36 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
+windspeed = prompt("please enter a nonnegative integer for windspeed" )
+while(windspeed % 1 != 0||windspeed < 0 ){
+  windspeed = prompt ("please enter a nonnegative integer for windspeed" )
+}
+let type = parseInt(windspeed,10);
+if (windspeed <= 38){
+  windspeed='The skies are calm...'
+}
+if (windspeed >= 39 && windspeed <= 73){
+  windspeed='Tropical Storm.'
+}
+if (windspeed >= 74 && windspeed <= 95){
+  windspeed='Category 1 Hurricane.'
+}
+if (windspeed >= 96 && windspeed <= 110){
+  windspeed='Category 2 Hurricane.'
+}
+if (windspeed >= 111 && windspeed <= 130){
+  windspeed='Category 3 Hurricane.'
+}
+if (windspeed >= 130 && windspeed <= 157){
+  windspeed='Category 4 Hurricane.'
+}
+if (windspeed >= 157){
+  windspeed='Category 5 Hurricane.'
+}
 
+var p=document.getElementById("hurricane-output")
+p.innerHTML=`${windspeed}`;
+windspeed = type
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
