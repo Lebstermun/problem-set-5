@@ -253,6 +253,58 @@ function gymnastics() {
   let total = 0; //// DO NOT MODIFY
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
+  let score1 = prompt("please enter a real number between 0.0 to 10.0 for score 1");
+  while(score1 < 0.0 || score1 >10.0){
+    score1=prompt("please enter a real number between 0.0 to 10.0 for score 1")
+  }
+  score1=parseInt(score1,10);
+  scores.push(score1);
+  let score2 = prompt("please enter a real number between 0.0 to 10.0 for score 2");
+  while(score2 < 0.0 || score2 >10.0){
+    score2=prompt("please enter a real number between 0.0 to 10.0 for score 2")
+  }
+   score2=parseInt(score2,10);
+   scores.push(score2);
+
+  let score3 = prompt("please enter a real number between 0.0 to 10.0 for score 3");
+  while(score3 < 0.0 || score3 >10.0){
+    score3=prompt("please enter a real number between 0.0 to 10.0 for score 3")
+  }
+  score3=parseInt(score3,10);
+  scores.push(score3);
+
+  let score4 = prompt("please enter a real number between 0.0 to 10.0 for score 4");
+  while(score4 < 0.0 || score4 >10.0){
+    score4=prompt("please enter a real number between 0.0 to 10.0 for score 4")
+  }
+   score4=parseInt(score4,10);
+   scores.push(score4);
+
+  let score5 = prompt("please enter a real number between 0.0 to 10.0 for score 5");
+  while(score5 < 0.0 || score5 >10.0){
+    score5=prompt("please enter a real number between 0.0 to 10.0 for score 5")
+  }
+  score5=parseInt(score5,10);
+  scores.push(score5);
+
+  let score6 = prompt("please enter a real number between 0.0 to 10.0 for score 6");
+  while(score6 < 0.0 || score6 >10.0){
+    score6=prompt("please enter a real number between 0.0 to 10.0 for score 6")
+  }
+   score6=parseInt(score6,10);
+   scores.push(score6);
+
+  total = score1+score2+score3+score4+score5+score6
+
+   let minScore = Math.min(score1,score2,score3,score4,score5,score6);
+   let maxScore = Math.max(score1,score2,score3,score4,score5,score6);
+
+   let average=(total-(minScore+maxScore))/4;
+   average=average.toFixed(2);
+
+   discarded= `${minScore}, ${maxScore}`;
+   let p =document.getElementById("gymnastics-output");
+   p.innerHTML = `Discarded: ${discarded}<br/>Score: ${average}`;
 
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
