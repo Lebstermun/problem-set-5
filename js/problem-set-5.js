@@ -158,6 +158,10 @@ function credit() {
 
 function guess() {
 
+
+
+
+
   // WRITE YOUR EXERCISE 4 CODE HERE
 
   ////////////////// DO NOT MODIFY
@@ -364,6 +368,63 @@ function reportCard() {
   let quizzes = 0; //// DO NOT MODIFY
   let homeworks = 0; // DO NOT MODIFY
   ///////////////////// DO NOT MODIFY
+
+  tests = -1;
+   quizzes = -1;
+   homeworks = -1;
+
+
+ let testadd
+   for (testadd = 0; testadd != -1; testTotal = testTotal + testadd) {
+     testadd = prompt(`Enter your test grades between 0.0 and 100.0 when you are done enter "-1"`)
+     while (testadd < 0 && testadd != -1 || testadd > 100.0){
+       testadd = prompt(`Enter your test grades between 0.0 and 100.0 when you are done enter "-1"`)
+     }
+     testadd = parseInt(testadd, 10);
+       tests = tests + 1
+     if (testadd === -1) {
+      testTotal++
+     }
+ }
+
+ let quizadd
+   for (quizadd = 0; quizadd != -1; quizTotal = quizTotal + quizadd) {
+     quizadd = prompt(`Enter your quiz grades between 0.0 and 100.0 when you are done enter "-1"`)
+     while (quizadd < 0 && quizadd != -1 || quizadd > 100.0){
+       quizadd = prompt(`Enter your quiz grades between 0.0 and 100.0 when you are done enter "-1"`)
+     }
+     quizadd = parseInt(quizadd, 10);
+       quizzes = quizzes + 1
+     if (quizadd === -1) {
+       quizTotal++
+     }
+ }
+
+
+ let homeworkadd
+   for (homeworkadd = 0; homeworkadd != -1; homeworkTotal = homeworkTotal + homeworkadd) {
+     homeworkadd = prompt(`Enter your homework grades between 0.0 and 100.0 when you are done enter "-1"`)
+     while (homeworkadd < 0 && homeworkadd != -1 || homeworkadd > 100.0){
+       homeworkadd = prompt(`Enter your homework grades between 0.0 and 100.0 when you are done enter "-1"`)
+     }
+     homeworkadd = parseInt(homeworkadd, 10);
+       homeworks = homeworks + 1
+     if (homeworkadd === -1) {
+       homeworkTotal++
+     }
+ }
+
+
+ let testaverage = testTotal / tests
+ let quizaverage = quizTotal / quizzes
+ let homeworkaverage = homeworkTotal / homeworks
+ testaverage = testaverage.toFixed(2);
+ quizaverage = quizaverage.toFixed(2);
+ homeworkaverage = homeworkaverage.toFixed(2);
+ let grade = (testaverage * 0.6) + (quizaverage * 0.3) + (homeworkaverage * 0.1)
+ grade = grade.toFixed(2);
+ let p =document.getElementById("report-card-output");
+ p.innerHTML =`Tests: ${testaverage}<br/>Quizzes: ${quizaverage}<br/>Homework: ${homeworkaverage}<br/>Grade: ${grade}`;
 
   /*
    * NOTE: The 'tests', 'quizzes', and 'homeworks' variables should be
