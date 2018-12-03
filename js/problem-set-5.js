@@ -27,12 +27,31 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
-height=prompt("please enter an interger for the Height");
-while (height > 23||height < 1 || height % 1 != 0) {
-  height=prompt("please enter an interger for the Height");
+while (height < 1 || height > 23 || height % 1  != 0) {
+  height = prompt("Enter an integer from 1 to 23 for the height");
 }
-var p=document.getElementById("mario-easy-output")
-p.innerHTML=`${height}`;
+
+height = Number(height);
+  
+let i = 1;
+let block = '#';
+let s1 = height - 2;
+let hold
+let code = "<code>"
+
+ while(i <= height){
+  hold = '' 
+    for(let j = 0; j<=spaces; j++) {
+     hold =hold + '&nbsp;'; 
+    }
+   block = block +'#';
+   space--;
+   code = code + hold + block + "</br>";
+   i++
+ }
+
+let p = document.getElementById('mario-easy-output');
+p.innerHTML= code + "</code>";
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -67,7 +86,30 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
+while (height < 1 || height > 23 || height % 1  != 0) {
+  height = prompt("Enter an integer from 1 to 23 for the height");
+}
 
+height = Number(height); 
+let i = 1;
+let block ='#'
+let s1 = height - 2;
+let s2 = `&nbsp` + `&nbsp` 
+let code = "<code>"
+let hold
+
+ while(i <= height){
+  hold = '';
+   for(j = 0; j = space1;j++){
+    hold = hold + `&nbsp;`;
+   }
+   space1 = space - 1;
+   block = block +'#';
+   code = code + hold + block + space2 + block + `</br>`
+ }
+   
+let p = document.getElementById('mario-hard');
+p.innerHTML= code + "</code>";
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
   //////////////////////////////// DO NOT MODIFY
@@ -120,7 +162,57 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
+do {
+    card = prompt("Please enter your credit card number:");
+  } while ((card % 1) != 0);
 
+  let cardTwo = card;
+  let i = ((cardTwo.length) - 2);
+  let value = "";
+  let totalSum = "";
+  let sum = "";
+
+  while (i >= 0) {
+    value = 2 * Number(cardTwo.charAt(i));
+    if (value >= 10) {
+      value = value.toString();
+      sum = Number(value.charAt(0)) + Number(value.charAt(1));
+    } else {
+      sum = value;
+    }
+    totalSum = Number(totalSum) + sum;
+    i = i - 2;
+  }
+
+  i = ((cardTwo.length) - 1);
+
+  while (i >= 0) {
+    value = Number(cardTwo.charAt(i));
+    sum = value;
+    totalSum = Number(totalSum) + sum;
+    i = i - 2;
+  }
+
+
+  let creditResult = document.getElementById('credit-output');
+
+  if ((totalSum % 10) == 0) {
+    if ((cardTwo.length) == 15) {
+      creditResult.innerHTML = "<img src ='images/amex.png'/>";
+    } else if ((cardTwo.length) == 13) {
+      creditResult.innerHTML = "<img src ='images/visa.png'/>";
+    } else if ((cardTwo.length) == 16) {
+      if (cardTwo.charAt(0) == "4") {
+        creditResult.innerHTML = "<img src ='images/visa.png'/>";
+      } else {
+        creditResult.innerHTML = "<img src ='images/mastercard.png'/>";
+      }
+    }
+  } else {
+    creditResult.innerHTML = "<img src ='images/invalid.png'/>";
+  }
+
+  card = Number(card);
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
@@ -158,10 +250,32 @@ function credit() {
 
 function guess() {
 
-
-
-
-
+  let answer = Math.floor(Math.random() * 1000) + 1;
+  let guess = prompt("Guess the number between 1 and 1,000");
+  while (guess < 0 || guess > 1,000 || NaN){
+  guess = prompt("Guess an Integer number between 1, and 1,000") 
+  }
+  
+  for(let g = 1; guess != answer; g++) { 
+    if (guess > answer) {
+      guess = prompt("Your last guess was too high try again");
+      while (guess < 0 || guess > 1,000 || NaN){
+        guess = prompt("Please enter a vaild number") 
+      }
+  }else {
+    guess = prompt("Your last guess was too low try again")
+    while(guess < 0 || guess > 1,000 || NaN){
+      guess = prompt("Please enter a valid number") 
+     }
+  }
+  }
+    let word = "guess" 
+    if (g > 1) {
+     word = "guesses" 
+    }
+    
+   let p =document.getElementById("guess-output")
+   p.innerHTML = `You guessed it Right in Just ${g} ${word}!`
   // WRITE YOUR EXERCISE 4 CODE HERE
 
   ////////////////// DO NOT MODIFY
